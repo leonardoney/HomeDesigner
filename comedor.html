@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Home Designer</title>
+    <script src="js/accesorio.js"></script>
+</head>
+
+<body style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+    <header>
+        <p class="header-font">HomeDesigner</p>
+        <p class="section-font-blue">Comedores</p>
+    </header>
+    <main>
+        <div>
+            <img src="images/comedor/comedor1.png" class="acc" style="width: 50%" onclick="seleccionarAccesorio(this)">
+        </div>
+        <br>
+        <div>
+            <img src="images/comedor/comedor2.png" class="acc" style="width: 50%" onclick="seleccionarAccesorio(this)">
+        </div>
+        <br>
+        <div>
+            <img src="images/comedor/comedor3.png" class="acc" style="width: 50%" onclick="seleccionarAccesorio(this)">
+        </div>
+    </main>
+    <div style="width: 100%; text-align: center; padding: 50px;">
+        <button type="button" class="button-yellow-big" id="botonVolver" onclick="confirmar('comedor')">Volver</button>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+</html>

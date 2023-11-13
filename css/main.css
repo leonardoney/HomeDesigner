@@ -1,0 +1,121 @@
+/*------------------------------------------------*/
+/*      Estilos generales                         */
+/*------------------------------------------------*/
+body {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+header {}
+
+main {}
+
+footer {}
+
+a {
+    text-decoration: none;
+}
+
+/*------------------------------------------------*/
+/*      Estilos para pantallas pequeñas (móviles) */
+/*------------------------------------------------*/
+@media screen and (max-width: 600px) {
+    header {}
+
+    main {}
+
+    footer {}
+}
+
+@media screen and (min-width: 768px) {
+
+    main,
+    header,
+    footer,
+    img {
+        transform: scale(0.60);
+        transform-origin: top center;
+    }
+}
+
+/*------------------------------------------------*/
+/*      Fuentes                                   */
+/*------------------------------------------------*/
+.header-font {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 33px;
+    font-weight: bold;
+    color: #eeb72b;
+}
+
+.section-font-blue {
+    font-family: Verdana, sans-serif;
+    font-size: 22px;
+    color: #147bb7;
+}
+
+.section-font-yellow {
+    font-family: Verdana, sans-serif;
+    font-size: 22px;
+    color: #eeb72b;
+}
+
+.body-font-blue {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    color: #147bb7;
+}
+
+.body-font-red {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    color: #ee482b;
+}
+
+.body-font-yellow {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    color: #eeb72b;
+}
+
+/*------------------------------------------------*/
+/*      Botones                                   */
+/*------------------------------------------------*/
+.button-yellow-small {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #eeb72b;
+    border: 2px solid #eeb72b;
+    border-radius: 5px;
+    padding: 1% 4%;
+    width: auto;
+}
+
+.button-yellow-big {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    /*font-weight: bold;*/
+    color: #ffffff;
+    background-color: #eeb72b;
+    border: 2px solid #eeb72b;
+    border-radius: 5px;
+    padding: 2% 18%;
+    width: auto;
+}
+
+/*------------------------------------------------*/
+/*      Elementos de posicionamiento              */
+/*------------------------------------------------*/
+.body-horizontal-bar {
+    border: none;
+    border-top: 1px solid #f2c038;
+    margin: 5% auto;
+    width: 80%;
+}
+.selected {
+    border: 2px solid red; /* Cambia el borde de la imagen al seleccionarla */
+    opacity: 0.7; /* Reduce la opacidad para dar un efecto de selección */
+}
