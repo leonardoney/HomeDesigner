@@ -79,6 +79,8 @@ function mostrarProyectos() {
 
       if (confirmar) {
         BorrarProyecto(proyecto.id);
+        // Mostrar un mensaje con el nombre del proyecto borrado
+        alert('Proyecto "' + db.proyecto_actual.nombre + '" ha sido borrado.');
       }
     });
 
