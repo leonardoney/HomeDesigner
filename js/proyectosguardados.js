@@ -117,7 +117,16 @@ function BorrarProyecto(id) {
     proyecto.ancho = 0;
     proyecto.largo = 0;
     proyecto.alto = 0;
-
+    proyecto.prediseno = "";
+    proyecto.planta = "";
+    proyecto.lampara = "";
+    proyecto.cuadro = "";
+    proyecto.sillon = "";
+    proyecto.racktv = "";
+    proyecto.ratona = "";
+    proyecto.comedor = "";
+    proyecto.habitacion = "";
+    
     // Actualiza el almacenamiento local con la nueva información
     localStorage.setItem('db', JSON.stringify(db));
 
