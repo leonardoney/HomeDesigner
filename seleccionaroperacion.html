@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Home Designer</title>
+    <script>
+        function confirmarCerrarSesion() {
+            return confirm("¿Desea cerrar sesión?");
+        }
+    </script>
 </head>
 
 <body>
@@ -46,18 +51,20 @@
         </div>
         <hr class="body-horizontal-bar">
         <div>
-            <a href="Index.html">
-                <p class="body-font-yellow" style="display: inline-block; vertical-align: middle;">Cerrar cesión</p>
+            <a href="Index.html" onclick="return confirmarCerrarSesion();">
+                <p class="body-font-yellow" style="display: inline-block; vertical-align: middle;">Cerrar sesión</p>
+            </a>
+        </div>
+        <hr class="body-horizontal-bar">
+        <div style="padding: 15%;">
+            <a href="cerrarcuenta.html">
+                <p class="body-font-red" style="display: inline-block;">Cerrar cuenta</p>
             </a>
         </div>
     </main>
     <footer>
     </footer>
-    <div style="padding: 35%;">
-        <a href="cerrarcuenta.html">
-            <p class="body-font-red" style="display: inline-block;">Cerrar cuenta</p>
-        </a>
-    </div>
+
 </body>
 
 </html>
