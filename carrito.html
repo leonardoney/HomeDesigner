@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/botones.css" />
+    <link rel="stylesheet" href="css/cajas.css" />
+</head>
+<body>
+  <!-- Navegación -->
+  <header>
+    <section id="navigation">
+    <nav class="navbar navbar navbar-light bg-warning w-100 ">
+        <a class="navbar-brand" href="index.html">
+            <img src="image/HomeDesing logo.png" alt="logo" width="60" height="30" class="d-inline-block align-top" />
+            HomeDesign
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img width="40" height="35" src="https://img.icons8.com/fluency/48/menu--v1.png" alt="menu--v1"/>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               
+                <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+</section>
+</header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Tu Carrito de Compras</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- PHP para mostrar los items del carrito -->
+                <?php
+                include 'php/db_connection.php';
+                $id_compra = 1;  // ID de la compra actual
+
+                $sql = "SELECT P.nombre, P.precio, I.cantidad_comprada, I.precio_item, I.id_item 
+                        FROM Items_X_compra I
+                        JOIN Productos P ON I.codigo_producto = P.codigo_producto
+                        WHERE I.id_compra = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("i", $id_compra);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                $total = 0;
+                while ($row = $result->fetch_assoc()) {
+                    $subtotal = $row['cantidad_comprada'] * $row['precio_item'];
+                    $total += $subtotal;
+                    echo "<tr>
+                        <td>{$row['nombre']}</td>
+                        <td>\${$row['precio']}</td>
+                        <td>{$row['cantidad_comprada']}</td>
+                        <td>\${$subtotal}</td>
+                        <td>
+                            <form action='php/eliminar_item.php' method='POST'>
+                                <input type='hidden' name='id_item' value='{$row['id_item']}' />
+                                <button type='submit' class='btn btn-danger'>Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+        <h3>Total: $<?php echo $total; ?></h3>
+
+        <form action="php/vaciar_carrito.php" method="POST">
+            <input type="hidden" name="id_compra" value="<?php echo $id_compra; ?>" />
+            <button type="submit" class="btn btn-danger">Vaciar Carrito</button>
+        </form>
+
+        <form action="php/finalizar_compra.php" method="POST">
+            <input type="hidden" name="id_compra" value="<?php echo $id_compra; ?>" />
+            <button type="submit" class="btn btn-success">Finalizar Compra</button>
+        </form>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-warning text-center mt-5">
+        <div class="p-3 bg-warning">
+            © 2024 HomeDesign. Todos los derechos reservados.
+            <a href="contacto.html" class="text ml-3">Contacto</a>
+            <a href="sobre-nosotros.html" class="text ml-3">Sobre Nosotros</a>
+            <a href="publicidad.html" class="text ml-3">Publicidad</a>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
