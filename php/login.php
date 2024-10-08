@@ -1,20 +1,9 @@
 <?php
+
+include 'db_connection.php';
+
 // Iniciar sesión
 session_start();
-
-// Conectar a la base de datos
-$host = 'localhost';
-$db = 'homedesign';
-$user = 'root'; // Cambia por tu usuario de la BD
-$password = ''; // Cambia por tu contraseña de la BD
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8";
-
-try {
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
 
 // Procesar el formulario de inicio de sesión
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
