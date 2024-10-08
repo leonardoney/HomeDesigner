@@ -38,6 +38,10 @@ font-size: 5rem;
     color:#16bac0;
     font-size: 50px;
 }
+.d-inline *{
+    margin-top: 20px;
+    
+}
 
 .list-group a {
     color: #16bac0;
@@ -54,18 +58,20 @@ h1, h3 {
 
 table {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-collapse: collapse;
+    
 }
 
 th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #0393a7;
     text-align: center;
 }
 
 th {
-    background-color: #f8f8f8;
+    background-color: #16bac0;
+ 
 }
 
 /* Contenedor para las imágenes superpuestas, centrado y agrandado */
@@ -118,16 +124,25 @@ body {
 }
 
 
-
-
 /* Estilo para el botón de comenzar */
 .btn-comenzar {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
+    
+   margin: 0 auto;
+   padding: 10px 30px;
+   font-size: 20px;
+ 
+}
+
+
+
+
+
+.btn-vaciar {
+padding: 6px 20px;
+}
+.btn-fin {
+padding: 6px 9px;
+
 }
 
 
