@@ -12,44 +12,37 @@
     <link rel="stylesheet"  href="css/cajas.css"/>
 </head>
 <body>
-
     <!-- Navegación -->
     <header>
         <section id="navigation">
-        <nav class="navbar navbar navbar-light bg-warning w-100 ">
-            <a class="navbar-brand" href="index.html">
-                <img src="image/HomeDesing logo.png" alt="logo" width="60" height="35" class="d-inline-block align-top" />
-                HomeDesign
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <img width="40" height="35" src="https://img.icons8.com/fluency/48/menu--v1.png" alt="menu--v1"/>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                   
-                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-                    
-                </ul>
-            </div>
-        </nav>
-    </section>
+            <nav class="navbar navbar-light bg-warning w-100">
+                <a class="navbar-brand" href="index.html">
+                    <img src="image/HomeDesing logo.png" alt="logo" width="60" height="35" class="d-inline-block align-top" />
+                    HomeDesign
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <img width="40" height="35" src="https://img.icons8.com/fluency/48/menu--v1.png" alt="menu--v1"/>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
     </header>
 
     <!-- Contenedor Principal -->
     <div class="container mt-5">
         <h1 class="text-center">La Tienda</h1>
         <h6 class="t">Explora nuestros productos y encuentra todo lo que necesitas para tu hogar</h6>
-        <p> </p>
-        <p> </p>
-        <p> </p>
-
         <!-- Barra de Búsqueda -->
         <div class="row mb-4">
             <div class="col-md-8 mx-auto">
                 <form action="buscar.html" method="GET" class="form-inline d-flex justify-content-center">
-                    <input class="form-control mr-2 " type="search" placeholder="Buscar productos..." aria-label="Buscar" name="q" />
+                    <input class="form-control mr-2" type="search" placeholder="Buscar productos..." aria-label="Buscar" name="q" />
                     <button class="btn btn-sample" type="submit">Buscar</button>
                 </form>
             </div>
@@ -77,8 +70,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Lampara</h5>
                                 <p class="card-text">$19.99</p>
-                                <form action="agregar_carrito.php" method="POST">
-                                    <input type="hidden" name="id_producto" value="1">
+                                <form action="php/agregar_carrito.php" method="POST">
+                                    <input type="hidden" name="codigo_producto" value="1">
                                     <input type="hidden" name="cantidad" value="1">
                                     <button type="submit" class="btn btn-sample">Agregar al Carrito</button>
                                 </form>
@@ -92,12 +85,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">Lampara doble</h5>
                                 <p class="card-text">$29.99</p>
-                                <form action="agregar_carrito.php" method="POST">
-                                    <input type="hidden" name="id_producto" value="1">
+                                <form action="php/agregar_carrito.php" method="POST">
+                                    <input type="hidden" name="codigo_producto" value="2">
                                     <input type="hidden" name="cantidad" value="1">
                                     <button type="submit" class="btn btn-sample">Agregar al Carrito</button>
-                                </form>                                
-                                
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -108,12 +100,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">Lampara triple</h5>
                                 <p class="card-text">$39.99</p>
-                                <form action="agregar_carrito.php" method="POST">
-                                    <input type="hidden" name="id_producto" value="1">
+                                <form action="php/agregar_carrito.php" method="POST">
+                                    <input type="hidden" name="codigo_producto" value="3">
                                     <input type="hidden" name="cantidad" value="1">
                                     <button type="submit" class="btn btn-sample">Agregar al Carrito</button>
                                 </form>
-                                
                             </div>
                         </div>
                     </div>

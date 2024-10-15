@@ -32,9 +32,19 @@ CREATE TABLE Compras (
 	FOREIGN KEY (id_usuario) REFERENCES Usuarios (Id)
 	);
 
-CREATE TABLE Items_X_compra (
-	id_item INT PRIMARY KEY,
+/* CREATE TABLE Items_X_compra (
+  	id_item INT PRIMARY KEY,
 	id_compra INT,
+	codigo_producto INT NOT NULL,
+	cantidad_comprada INT NOT NULL,
+	precio_item INT NOT NULL,
+	FOREIGN KEY (id_compra) REFERENCES Compras (id_compra),
+	FOREIGN KEY (codigo_producto) REFERENCES Productos (codigo_producto)
+	);
+*/
+
+CREATE TABLE Items_X_compra (
+	id_compra INT AUTO_INCREMENT PRIMARY KEY,
 	codigo_producto INT NOT NULL,
 	cantidad_comprada INT NOT NULL,
 	precio_item INT NOT NULL,
