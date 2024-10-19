@@ -21,7 +21,8 @@ foreach ($result as $row) {
     $subtotal = $row['cantidad_comprada'] * $row['precio_item'];
     $total += $subtotal;
     $items[] = [
-        'nombre' => $row['codigo_producto'], // Asumo que "nombre" es equivalente a "codigo_producto"
+        'id_compra' => $row['id_compra'],
+        'producto' => $row['codigo_producto'],
         'precio' => $row['precio_item'],
         'cantidad' => $row['cantidad_comprada'],
         'subtotal' => $subtotal,

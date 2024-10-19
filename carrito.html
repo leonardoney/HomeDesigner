@@ -38,6 +38,7 @@
       <table class="table table-striped mt-4">
           <thead class="thead">
               <tr>
+                  <th>Compra</th>
                   <th>Producto</th>
                   <th>Precio</th>
                   <th>Cantidad</th>
@@ -98,13 +99,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.items.forEach(item => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${item.nombre}</td>
+                        <td>${item.id_compra}</td>
+                        <td>${item.producto}</td>
                         <td>$${item.precio}</td>
                         <td>${item.cantidad}</td>
                         <td>$${item.subtotal}</td>
                         <td>
                             <form action="php/eliminar_item.php" method="POST">
-                                <input type="hidden" name="id_item" value="${item.id_item}" />
+                                <input type="hidden" name="id_compra" value="${item.id_compra}" />
+                                <input type="hidden" name="producto" value="${item.producto}" />
                                 <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>
                         </td>
