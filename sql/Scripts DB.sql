@@ -32,12 +32,13 @@ CREATE TABLE compras (
 	);
 
 CREATE TABLE items_x_compra (
-	id_compra INT AUTO_INCREMENT PRIMARY KEY,
-	codigo_producto INT NOT NULL,
-	cantidad_comprada INT NOT NULL,
-	precio_item DECIMAL(10, 2) NOT NULL,
-	FOREIGN KEY (codigo_producto) REFERENCES productos (codigo_producto)
-	);
+    id_compra INT NOT NULL,
+    codigo_producto INT NOT NULL,
+    cantidad_comprada INT NOT NULL,
+    precio_item DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (id_compra, codigo_producto),
+    FOREIGN KEY (codigo_producto) REFERENCES productos (codigo_producto)
+);
 
 CREATE TABLE stock_productos (
 	id_stock INT PRIMARY KEY,

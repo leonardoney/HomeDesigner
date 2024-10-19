@@ -4,7 +4,7 @@ include 'db_connection.php';    // Conexión a la base de datos
 ob_clean();                     // Limpiar cualquier salida generada durante conexión a BD
 
 // ID de la compra actual
-$id_compra = 2;
+$id_compra = 1;
 
 // Consultar los productos del carrito para la compra específica
 $sql = "SELECT * FROM items_x_compra WHERE id_compra = :id_compra";
