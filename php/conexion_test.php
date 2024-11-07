@@ -12,7 +12,7 @@
 $servername = "localhost";  // Servidor de la base de datos
 $username = "root";    // Tu usuario de MySQL
 $password = "1234"; // Tu contraseña de MySQL
-$dbname = "homedesigner_db"; // El nombre de la base de datos
+$dbname = "homedesign_db"; // El nombre de la base de datos
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

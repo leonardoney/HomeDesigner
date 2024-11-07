@@ -1,6 +1,6 @@
-CREATE DATABASE homedesigner_db;
+CREATE DATABASE homedesign_db;
 
-USE homedesigner_db;
+USE homedesign_db;
 
 CREATE TABLE usuarios (
 	Id INT PRIMARY KEY AUTO_INCREMENT,
